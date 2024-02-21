@@ -11,6 +11,7 @@ import {
   handleCanvasMouseDown,
   handleCanvasMouseUp,
   handleCanvasObjectModified,
+  handleCanvasObjectScaling,
   handleCanvasSelectionCreated,
   handleCanvaseMouseMove,
   handleResize,
@@ -168,7 +169,9 @@ export default function Page() {
     })
 
     canvas.on("object:scaling", (options: any) => {
-      // 3:06:30
+      handleCanvasObjectScaling({
+        options, setElementAttributes
+      })
     })
 
     window.addEventListener("resize", () => {
